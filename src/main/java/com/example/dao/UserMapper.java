@@ -9,12 +9,12 @@ import java.util.List;
 public interface UserMapper {
 
     @Results({
-        @Result(property = "user_id", column = "user_id"),
+        @Result(property = "userId", column = "user_id"),
         @Result(property = "name", column = "name"),
         @Result(property = "age", column = "age"),
         @Result(property = "address", column = "address"),
     })
-    @Select("select * from user")
+    @Select("select * from user order by user_id")
     List<User> getUsers();
 
     @Insert("insert into user(user_id, name, age, address) values(#{user.user_id}, #{user.name}, #{user.age}, #{user.address})")

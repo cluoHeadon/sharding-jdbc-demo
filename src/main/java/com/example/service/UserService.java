@@ -8,17 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class UserService {
-    @Autowired
-    UserMapper userMapper;
+public interface UserService {
 
-    public List<User> getUsers() {
-        return userMapper.getUsers();
-    }
+    List<User> getUsers();
 
-    public int addUser(User user) {
-        user.setUser_id(IdGenerateUtil.getUserId());
-        return userMapper.addUser(user);
-    }
+    int addUser(User user);
 }
