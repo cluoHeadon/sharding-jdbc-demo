@@ -1,24 +1,12 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
+# Created by .ignore support plugin (hsz.mobi)
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-
-### IntelliJ IDEA ###
-.idea
-*.iws
 *.iml
-*.ipr
-
-### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+target
+.idea/*
+logs
+.gitignore
+./backend/gome-axwl-fc/.gitignore
+test.java
+*vcs.xml
+*test.java
+data

@@ -4,17 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>shardingjdbcdemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demo</name>
+	<name>shardingjdbcdemo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.0.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -29,10 +29,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.3.1</version>
+			<version>1.3.0</version>
 		</dependency>
 
 		<dependency>
@@ -41,41 +48,44 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!--sharding-jdbc -->
-		<!--<dependency>-->
-			<!--<groupId>com.dangdang</groupId>-->
-			<!--<artifactId>sharding-jdbc-core</artifactId>-->
-			<!--<version>1.3.3</version>-->
-		<!--</dependency>-->
-		<dependency>
-			<groupId>io.shardingjdbc</groupId>
-			<artifactId>sharding-jdbc-core</artifactId>
-			<version>2.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
-			<version>1.1.3</version>
+			<version>1.0.29</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- 引入sharding-jdbc核心模块 -->
+		<!--<dependency>-->
+			<!--<groupId>io.shardingjdbc</groupId>-->
+			<!--<artifactId>sharding-jdbc-core</artifactId>-->
+			<!--<version>2.0.3</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>io.shardingjdbc</groupId>-->
+			<!--<artifactId>sharding-jdbc-core-spring-boot-starter</artifactId>-->
+			<!--<version>2.0.3</version>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+			<!--<groupId>commons-dbcp</groupId>-->
+			<!--<artifactId>commons-dbcp</artifactId>-->
+			<!--<version>1.4</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>io.shardingsphere</groupId>
+			<artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+			<version>3.0.0.M1</version>
 		</dependency>
 		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.44</version>
+			<groupId>io.shardingsphere</groupId>
+			<artifactId>sharding-jdbc-spring-namespace</artifactId>
+			<version>3.0.0.M1</version>
 		</dependency>
 	</dependencies>
 
