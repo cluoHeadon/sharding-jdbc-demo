@@ -59,34 +59,17 @@
 			<version>1.16.4</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- 引入sharding-jdbc核心模块 -->
-		<!--<dependency>-->
-			<!--<groupId>io.shardingjdbc</groupId>-->
-			<!--<artifactId>sharding-jdbc-core</artifactId>-->
-			<!--<version>2.0.3</version>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>io.shardingjdbc</groupId>-->
-			<!--<artifactId>sharding-jdbc-core-spring-boot-starter</artifactId>-->
-			<!--<version>2.0.3</version>-->
-		<!--</dependency>-->
-
-		<!--<dependency>-->
-			<!--<groupId>commons-dbcp</groupId>-->
-			<!--<artifactId>commons-dbcp</artifactId>-->
-			<!--<version>1.4</version>-->
-		<!--</dependency>-->
+		<!-- sharding-->
 		<dependency>
 			<groupId>io.shardingsphere</groupId>
 			<artifactId>sharding-jdbc-spring-boot-starter</artifactId>
 			<version>3.0.0.M1</version>
 		</dependency>
-		<dependency>
-			<groupId>io.shardingsphere</groupId>
-			<artifactId>sharding-jdbc-spring-namespace</artifactId>
-			<version>3.0.0.M1</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>io.shardingsphere</groupId>-->
+			<!--<artifactId>sharding-jdbc-spring-namespace</artifactId>-->
+			<!--<version>3.0.0.M1</version>-->
+		<!--</dependency>-->
 	</dependencies>
 
 	<build>

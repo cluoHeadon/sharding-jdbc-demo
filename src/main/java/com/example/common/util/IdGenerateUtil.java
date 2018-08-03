@@ -1,6 +1,12 @@
 package com.example.common.util;
 
+import com.example.common.Constants.TimeConstant;
 import io.shardingsphere.core.keygen.DefaultKeyGenerator;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static com.example.common.util.DateUtil.unixToDateString;
 
 /**
  * userId生成器
@@ -22,4 +28,5 @@ public class IdGenerateUtil {
     public static long getSnowId() {
         return keyGenerator.generateKey().longValue();
     }
+
 }

@@ -1,9 +1,12 @@
 package com.example.common.util;
 
+import com.example.common.Constants.TimeConstant;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class DateUtil {
 
@@ -25,5 +28,70 @@ public class DateUtil {
         SimpleDateFormat format = new SimpleDateFormat(pattern);
 
         return format.format(date);
+    }
+
+    /**
+     * shardingkey转换为Date
+     *
+     * @date 2018/5/18
+     * @param
+     * @return
+     */
+    public static Date shardingKeyToDate(Long key) {
+        Long unixTime = key >> 22;
+        unixTime += TimeConstant.START_UNIX_TIME;
+        String timeString = unixToDateString(unixTime, TimeConstant.DATE_FORMAT_YEAR_MONTH);
+        SimpleDateFormat sdf = new SimpleDateFormat(TimeConstant.DATE_FORMAT_YEAR_MONTH);
+        Date result;
+        try {
+            result = sdf.parse(timeString);
+        } catch (Exception e) {
+            return null;
+        }
+        return result;
+    }
+
+    /**
+     * 字符串转Date
+     *
+     * @date 2018/5/17
+     * @param str 字符串的日期，如：2018-06-30
+     * @return Date类型的日期
+     */
+    public static Date parseDate(String str) {
+        Date result;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            result = sdf.parse(str);
+        } catch (Exception e) {
+            return null;
+        }
+        return result;
+    }
+
+    /**
+     * Date增减天数
+     *
+     * @date 2018/5/25
+     */
+    public static Date addDay(Date date, int num) {
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        calendar.add(Calendar.DATE, num);
+        Date result = calendar.getTime();
+        return result;
+    }
+
+    /**
+     * Date增减月数
+     *
+     * @date 2018/5/18
+     */
+    public static Date addMonth(Date date, int num) {
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        calendar.add(Calendar.MONTH, num);
+        Date result = calendar.getTime();
+        return result;
     }
 }
