@@ -12,7 +12,7 @@ public interface UserMapper {
         @Result(property = "userId", column = "user_id"),
         @Result(property = "name", column = "name"),
         @Result(property = "age", column = "age"),
-        @Result(property = "address", column = "address"),
+        @Result(property = "address", column = "address")
     })
     @Select("select * from user order by user_id")
     List<User> getUsers();

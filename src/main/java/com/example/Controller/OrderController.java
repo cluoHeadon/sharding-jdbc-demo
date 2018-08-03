@@ -1,6 +1,7 @@
 package com.example.Controller;
 
 import com.example.entity.Order;
+import com.example.entity.OrderVo;
 import com.example.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/addOrder", method = RequestMethod.POST)
-    public int addOrder(@RequestBody Order order) {
-        return orderService.addOrder(order);
+    public void addOrder(@RequestBody OrderVo orderVo) {
+        orderService.addOrder(orderVo);
     }
 }

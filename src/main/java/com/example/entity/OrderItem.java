@@ -1,7 +1,13 @@
 package com.example.entity;
 
-/**
- * Created by Administrator on 2018/8/3 0003.
- */
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class OrderItem {
+    private Long orderId;
+    private Integer orderItemId;
+    private Integer userId;
+    private String description;
 }

@@ -1,7 +1,12 @@
 package com.example.entity;
 
-/**
- * Created by Administrator on 2018/8/3 0003.
- */
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Goods {
+    private Integer goodsId;
+    private String name;
+    private Integer type;
 }

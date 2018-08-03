@@ -14,7 +14,7 @@ public interface OrderMapper {
             @Result(property = "orderId", column = "order_id"),
             @Result(property = "userId", column = "user_id"),
             @Result(property = "description", column = "description"),
-            @Result(property = "createTime", column = "create_time"),
+            @Result(property = "createTime", column = "create_time")
     })
     @Select("select * from order order by order_id")
     List<Order> getOrders();
