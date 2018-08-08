@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.dao.provider;
 
 import com.example.entity.OrderItem;
 
@@ -6,15 +6,14 @@ import java.text.MessageFormat;
 import java.util.List;
 import java.util.Map;
 
-
-public class OrderItemMapperProvider {
+public class UserMapperProvider {
     public String insertAll(Map map) {
-        List<OrderItem> orderItems = (List<OrderItem>) map.get("orderItems");
+        List<OrderItem> orderItems = (List<OrderItem>) map.get("users");
         StringBuilder sb = new StringBuilder();
-        sb.append("insert into order_item ");
-        sb.append("(order_id, order_item_id, user_id, description) ");
+        sb.append("insert into user ");
+        sb.append("(user_id, name, age, address) ");
         sb.append("values ");
-        MessageFormat mf = new MessageFormat("(#'{'orderItems[{0}].orderId}, #'{'orderItems[{0}].orderItemId}, #'{'orderItems[{0}].userId}, #'{'orderItems[{0}].description})");
+        MessageFormat mf = new MessageFormat("(#'{'users[{0}].userId}, #'{'users[{0}].name}, #'{'users[{0}].age}, #'{'users[{0}].address})");
         for (int i = 0; i < orderItems.size(); i++) {
             sb.append(mf.format(new Object[]{i}));
             if (i < orderItems.size() - 1) {

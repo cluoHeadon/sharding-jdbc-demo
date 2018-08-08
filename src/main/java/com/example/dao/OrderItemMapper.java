@@ -1,5 +1,6 @@
 package com.example.dao;
 
+import com.example.dao.provider.OrderItemMapperProvider;
 import com.example.entity.OrderItem;
 import org.apache.ibatis.annotations.*;
 
