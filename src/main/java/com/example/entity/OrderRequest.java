@@ -7,6 +7,8 @@ import lombok.Setter;
 @Setter
 public class OrderRequest {
     private Integer userId;
-    private String start;
-    private String end;
+    private String startTime;
+    private String endTime;
+    private Long start;
+    private Long end;
 }

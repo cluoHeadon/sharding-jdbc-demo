@@ -1,6 +1,7 @@
 package com.example.Controller;
 
 import com.example.entity.Order;
+import com.example.entity.OrderInfo;
 import com.example.entity.OrderRequest;
 import com.example.entity.OrderVo;
 import com.example.service.OrderService;
@@ -31,5 +32,10 @@ public class OrderController {
     @RequestMapping(value = "/addOrder", method = RequestMethod.POST)
     public void addOrder(@RequestBody OrderVo orderVo) {
         orderService.addOrder(orderVo);
+    }
+
+    @RequestMapping(value = "/orderInfo", method = RequestMethod.POST)
+    public List<OrderInfo> getOrderInfo(@RequestBody OrderRequest orderRequest) {
+        return orderService.getOrderInfo(orderRequest);
     }
 }

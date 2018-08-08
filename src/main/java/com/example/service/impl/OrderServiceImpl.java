@@ -3,10 +3,7 @@ package com.example.service.impl;
 import com.example.common.util.IdGenerateUtil;
 import com.example.dao.OrderItemMapper;
 import com.example.dao.OrderMapper;
-import com.example.entity.Order;
-import com.example.entity.OrderItem;
-import com.example.entity.OrderRequest;
-import com.example.entity.OrderVo;
+import com.example.entity.*;
 import com.example.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +37,11 @@ public class OrderServiceImpl implements OrderService {
         orderMapper.addOrder(order);
         orderItemMapper.addOrderItems(orderItems);
 
+    }
+
+    @Override
+    public List<OrderInfo> getOrderInfo(OrderRequest orderRequest) {
+        return orderMapper.getOrderInfo(orderRequest);
     }
 
     /**
