@@ -17,6 +17,9 @@ public interface UserMapper {
     @Select("select * from user order by user_id")
     List<User> getUsers();
 
-    @Insert("insert into user(user_id, name, age, address) values(#{user.user_id}, #{user.name}, #{user.age}, #{user.address})")
+    @Insert("insert into user(user_id, name, age, address) values(#{user.userId}, #{user.name}, #{user.age}, #{user.address})")
     int addUser(@Param("user") User user);
+
+    @InsertProvider(type = UserMapperProvider.class, method = "insertAll")
+    int batchAddUser(@Param("users") List<User> users);
 }

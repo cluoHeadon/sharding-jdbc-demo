@@ -21,4 +21,9 @@ public class UserController {
     public int addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
+
+    @RequestMapping(value = "/batchAddUser", method = RequestMethod.POST)
+    public int batchAddUser(@RequestBody List<User> users) {
+        return userService.batchAddUser(users);
+    }
 }

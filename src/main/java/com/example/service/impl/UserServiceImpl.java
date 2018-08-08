@@ -25,4 +25,12 @@ public class UserServiceImpl implements UserService{
         user.setUserId(IdGenerateUtil.getUserId());
         return userMapper.addUser(user);
     }
+
+    @Override
+    public int batchAddUser(List<User> users) {
+        for (User user : users) {
+            user.setUserId(IdGenerateUtil.getUserId());
+        }
+        return userMapper.batchAddUser(users);
+    }
 }
