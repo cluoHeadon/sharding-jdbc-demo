@@ -94,4 +94,31 @@ public class DateUtil {
         Date result = calendar.getTime();
         return result;
     }
+
+    /**
+     * 字符串格式的时间 转换为 sharding-jdbc默认的key格式
+     *
+     * @date 2018/5/17
+     * @param time 时间
+     * @return 相应的毫秒数
+     */
+    public static long dateToShardingJdbcKey(Date time) {
+        long millisecond = dateToUnix(time);
+        // 减去2016年1月1日0点0分0秒
+        millisecond -= TimeConstant.START_UNIX_TIME;
+        millisecond = millisecond << 22;
+
+        return millisecond;
+    }
+
+    /**
+     * Date格式的时间 转换为 unix时间戳毫秒
+     *
+     * @date 2018/5/17
+     * @param time 时间
+     * @return 相应的毫秒数
+     */
+    public static long dateToUnix(Date time) {
+        return time.getTime();
+    }
 }

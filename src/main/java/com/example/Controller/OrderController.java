@@ -1,6 +1,7 @@
 package com.example.Controller;
 
 import com.example.entity.Order;
+import com.example.entity.OrderRequest;
 import com.example.entity.OrderVo;
 import com.example.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,11 @@ public class OrderController {
 
     @Autowired
     OrderService orderService;
+
+    @RequestMapping(value = "/order", method = RequestMethod.POST)
+    public List<Order> getOrder(@RequestBody OrderRequest orderRequest) {
+        return orderService.getOrder(orderRequest);
+    }
 
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     public List<Order> getOrders() {

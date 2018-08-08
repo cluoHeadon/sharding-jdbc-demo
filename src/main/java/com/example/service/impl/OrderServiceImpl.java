@@ -5,6 +5,7 @@ import com.example.dao.OrderItemMapper;
 import com.example.dao.OrderMapper;
 import com.example.entity.Order;
 import com.example.entity.OrderItem;
+import com.example.entity.OrderRequest;
 import com.example.entity.OrderVo;
 import com.example.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     OrderItemMapper orderItemMapper;
+
+    @Override
+    public List<Order> getOrder(OrderRequest orderRequest) {
+        return orderMapper.getOrder(orderRequest);
+    }
 
     @Override
     public List<Order> getOrders() {
